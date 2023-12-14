@@ -1,0 +1,29 @@
+syntax = "proto3";
+package student;
+
+
+
+service StudentService {
+    rpc AddStudent (Student) returns (Student) {}
+    rpc UpdateStudent (Student) returns (Student) {}
+    rpc DeleteStudent (RollNo) returns (Student) {}
+  }
+  
+  message void {}
+  message RollNo {
+    string rollNo = 1;
+  }
+  message Student {
+    string rollNo = 1;
+    string name = 2;
+    string CNIC = 3;
+    Gender gender = 5;
+    bool isActiveStudent = 4;
+
+  }
+  
+    enum Gender {
+      Male = 0;
+      Female = 1;
+      NotSpecified = 2;
+    }
