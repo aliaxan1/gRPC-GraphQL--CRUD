@@ -62,18 +62,18 @@ export const resolvers=  {
 
 event.on('createStudent', async (args) => {
     client.addStudent(args, function(err, response) {
-        console.log('Student created :-\n', response);
+        !(response==undefined)?console.log('Service Called\n', response):console.error('Service is down!!!\n',"response is  :-->",response);
       });
 });
 
 event.on('updateStudent', async (args) => {
     client.updateStudent(args, function(err, response) {
-        console.log('Student updated :-\n', response);
+        !(response==undefined)?console.log('Service Called\n', response):console.error('Service is down!!!\n',"response is  :-->",response);
       });
 });
 
 event.on('deleteStudent', async (args) => {
     client.deleteStudent(args, function(err, response) {
-        console.log('Student deleted\n', response);
+        !(response==undefined)?console.log('Service Called\n', response):console.error('Service is down!!!\n',"response is  :-->",response);
       });
 });
